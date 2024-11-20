@@ -44,12 +44,14 @@ function CreatePostForm() {
 
   return (
     <div>
+     <h1>Create a post</h1>
       <nav>
-      <Link to="/ViewPosts" className='link'>View Posts</Link>
-      <Link to="/" className='link'>Home</Link>
+      <Link to="/ViewPosts" className='link'style={{paddingLeft:'20px'}}>View Posts</Link>
+
+      <Link to="/" className='link' style={{paddingRight:'20px'}}>Home</Link>
 
       </nav>
-     
+      
 
       <form onSubmit={handleSubmit}>
         <input

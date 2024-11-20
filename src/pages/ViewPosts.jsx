@@ -89,8 +89,9 @@ export default function ViewPosts() {
     <div>
       <h1>Here are the posts</h1>
       <nav>
-      <Link to="/create" className='link'>Create a post here</Link>
-      <Link to="/" className='link'>Home</Link>
+      <Link to="/create" className='link'style={{paddingLeft:'20px'}}>Create a post here</Link>
+
+      <Link to="/" className='link' style={{paddingRight:'20px'}}>Home</Link>
       </nav>
       
 
@@ -100,11 +101,12 @@ export default function ViewPosts() {
           placeholder="Search posts..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          style={{ padding: '10px', width: '100%' }}
+          style={{ padding: '10px', width: '95%' }}
+          id='search'
         />
       </div>
 
-      <div style={{ margin: '10px 0' }}>
+      <div style={{ margin: '10px 0',paddingLeft:'20px' }}>
         <button onClick={() => setSortByLikes((prev) => !prev)}>
           {sortByLikes ? 'Sort Alphabetically' : 'Sort by Likes'}
         </button>
@@ -112,16 +114,17 @@ export default function ViewPosts() {
       <div className='post-container'>
       {filteredPosts.map((post) => (
         <div key={post.id} style={{ marginBottom: '20px', maxWidth: '70%'}} className='post-card'>
-          <Link to={`/post/${post.id}`}>
+          <Link to={`/post/${post.id}`} className='PostLink'>
             <h3>Title: {post.title}</h3>
           </Link>
-          {post.image_url && (
+          {(post.image_url)? (
             <img
               src={post.image_url}
               alt="Post thumbnail"
               style={{ maxWidth: '60%', height: 'auto' }}
             />
-          )}
+          ):null
+          }
             <p>Upvotes: {post.upvotes}</p>
 
         </div>

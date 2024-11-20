@@ -21,8 +21,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -30,8 +28,13 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  display: flex;
+  justify-content: center;
 }
-
+p{
+  display: flex;
+  justify-content: center;
+}
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -42,20 +45,13 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: white;
 }
 button:hover {
   background-color: #005bb5;
 }
 
-nav {
-  background-color: #0073e6;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: space-around;
-}
+
 .post-card {
   background-color: white;
   border: 1px solid #ddd;
@@ -66,6 +62,7 @@ nav {
   display: flex;
   align-items: center;
   flex-direction: column;
+  min-width: 50%;
 }
 
 .post-card img {
@@ -133,10 +130,112 @@ form button:hover {
 .post-details p {
   line-height: 1.6;
   color: #333;
+}/* Basic Styles */
+.Home {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
 }
-.link{
-  color: aliceblue;
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  justify-self: center;
+  width:95%;
+  border:#1a1a1a 1px solid;
+  border-radius:50px;
 }
-.link:hover{
-color: aliceblue;
+
+.postings {
+  display: flex;
+  gap: 15px;
+  align-content: center;
+  padding-top:10px;
+  padding-left: 30px;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: #64b1fe;
+}
+
+/* User Dropdown Styles */
+.user {
+  position: relative;
+  cursor: pointer;
+  padding-right: 10px;
+  
+}
+
+.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.drop-down {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  min-width: 150px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  
+}
+
+.drop-down .link {
+  color: black;
+  padding: 10px;
+  display: block;
+  font-size: 14px;
+  text-align: left;
+}
+
+.drop-down .link:hover {
+  background-color: #f5f5f5;
+}
+
+/* Show dropdown on hover */
+.user:hover .drop-down {
+  display: block;
+}
+
+/* Optional: Add transition for smooth dropdown effect */
+.drop-down {
+  transition: opacity 0.3s ease-in-out;
+}
+#search{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  justify-self: center;
+  width:50%;
+  border-radius: 5px;
+}
+
+.PostLink {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.PostLink:hover {
+  text-decoration: underline;
+  color: rgb(118, 111, 111);
 }

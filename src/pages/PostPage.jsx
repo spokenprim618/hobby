@@ -137,7 +137,7 @@ function PostPage() {
            <Link to="/" className='link'>Home</Link>
       </nav>
       <h2>Title: {post.title}</h2>
-      {post.image_url && <img src={post.image_url} alt={post.title} />}
+      {post.image_url && <img src={post.image_url} alt={post.title} style={{width:'75%',height:'25%'}}/>}
       <p>Desc: {post.content}</p>
       <p>Upvotes: {post.upvotes}</p>
       <button onClick={handleUpvote}>Upvote</button>
@@ -158,6 +158,7 @@ function PostPage() {
             placeholder="Update description"
             value={updatedDescription}
             onChange={(e) => setUpdatedDescription(e.target.value)}
+            style={{transform:'translateY(20px)'}}
           />
           <input
             type="text"
@@ -172,7 +173,7 @@ function PostPage() {
 
       <h4>Comments</h4>
       {comments.map((comment) =>
-        comment ? <p key={comment.id}>{comment.content}</p> : null
+        comment ? <p key={comment.id} style={{backgroundColor:'gray'}}>{comment.content}</p> : null
       )}
 
       <form onSubmit={addComment}>
