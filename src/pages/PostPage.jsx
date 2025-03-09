@@ -172,9 +172,13 @@ function PostPage() {
       )}
 
       <h4>Comments</h4>
+      <ul>
       {comments.map((comment) =>
-        comment ? <p key={comment.id} style={{backgroundColor:'gray'}}>{comment.content}</p> : null
+        comment ? <li key={comment.id}>{comment.content}</li> : null
       )}
+
+      </ul>
+      
 
       <form onSubmit={addComment}>
         <textarea
